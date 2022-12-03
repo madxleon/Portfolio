@@ -1,0 +1,90 @@
+{ 
+  "variables": {
+    "iso_url":         		    "https://mirror.axelname.ru/centos/8-stream/isos/x86_64/CentOS-Stream-8-x86_64-latest-boot.iso",
+    "iso_local_url":       		"C:\\Users\\madxl\\Downloads\\CentOS-7-x86_64-Minimal-2207-02.iso",
+	"ssh_user":           		"root",
+    "ssh_pass":            		"xxx",
+    "ssh_host":    		        "",
+    "insecure_connection":		"true",
+    "vm_name":					"CentOS 7",
+    "build_type": 				"",
+    "vmipaddress": 				"192.168.87.128",
+    "vmgateway": 				"192.168.87.1",
+    "vmnetmask": 				"255.255.255.0",
+	"checksumm": 				"d68f92f41ab008f94bd89ec4e2403920538c19a7b35b731e770ce24d66be129a",
+	"ks": 						"CentOS-Stream-8-x86_64-latest-boot (1).iso"
+    
+
+},
+
+"builders": [
+{
+"type": 			"vmware-iso",
+"vm_name": 			"{{user `vm_name`}}-{{ timestamp }}",
+"output_directory": "D:\\Virtual Machine\\Tamplates\\{{user `vm_name`}}-{{ timestamp }}", 
+"version": 			"16",
+"iso_url": 			"{{user `iso_local_url`}} ",
+"iso_checksum": 	"{{user `checksumm`}}",
+"disk_size": 		"25000",
+"disk_type_id": 	"",
+"cpus": 			"2",
+"cores": 			"2",
+"memory": 			"2048",
+"boot_wait": 		"10s",
+"cdrom_adapter_type": "",
+"cd_files": ["D:\\WorkSpace\\Learn\\HashiCorp\\Learn-ansible-git-docker-python\\packer\\centos7_kickstart.cfg"],
+"boot_command": [
+  "<esc>",  
+  "linux inst.ks=cdrom:/dev/sr1:/centos7_kickstart.cfg <enter><wait>",
+  " ip={{user `vmipaddress`}}::{{user `vmgateway`}}:{{user `vmnetmask`}}:template:eth0:none",
+  " nameserver={{user `vm_name`}}",
+  " biosdevname=0 net.ifnames=0",
+  "<enter>",
+  "<wait>"
+],
+
+
+"communicator": 			"ssh",
+"ssh_username": 			"{{user `ssh_user`}}",
+"ssh_password": 			"{{user `ssh_pass`}}",
+"ssh_timeout": 				"1h",
+"ssh_host": 				"{{user `ssh_host`}}",
+"ssh_port": 				"22",
+"ssh_handshake_attempts": 	"3",
+"headless": 				"false",
+"vnc_bind_address": 		"192.168.87.1",
+"vnc_port_min": 			"5901",
+"vnc_port_max": 			"5960",
+"vnc_disable_password": 	"true",
+"insecure_connection": 		"{{user `insecure_connection`}}",
+"network": 					"nat",
+"shutdown_timeout":			"5h",
+"shutdown_command":			"shutdown -P now"
+}],
+
+
+
+"provisioners": [{
+      "type": "shell",
+      "scripts" : [
+        "D:\\WorkSpace\\Learn\\HashiCorp\\Learn-ansible-git-docker-python\\packer\\etc\\scripts\\init.sh",
+        "D:\\WorkSpace\\Learn\\HashiCorp\\Learn-ansible-git-docker-python\\packer\\etc\\scripts\\installPython.sh"
+      ]
+    },    
+  {
+      "type": "file",
+      "source": "D:\\WorkSpace\\Learn\\HashiCorp\\Learn-ansible-git-docker-python\\packer\\etc\\Files\\rsa.pub",
+      "destination": "/opt/rsa.pub"  
+  
+  },
+  {
+      "type": "shell",
+      "inline": ["echo foooooooo",
+                 "ifconfig",
+                 "hostname",
+				 "cat /opt/rsa.pub  >> ~/.ssh/authorized_keys"]
+  }
+  ]   
+    
+  
+}

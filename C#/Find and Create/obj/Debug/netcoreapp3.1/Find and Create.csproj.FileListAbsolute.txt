@@ -1,0 +1,16 @@
+F:\WorkSpace\Learn\C#\Find\Find and Create\bin\Debug\netcoreapp3.1\Find and Create.exe
+F:\WorkSpace\Learn\C#\Find\Find and Create\obj\Debug\netcoreapp3.1\Find and Create.csprojAssemblyReference.cache
+F:\WorkSpace\Learn\C#\Find\Find and Create\obj\Debug\netcoreapp3.1\Find and Create.AssemblyInfoInputs.cache
+F:\WorkSpace\Learn\C#\Find\Find and Create\obj\Debug\netcoreapp3.1\Find and Create.AssemblyInfo.cs
+F:\WorkSpace\Learn\C#\Find\Find and Create\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Word.dll
+F:\WorkSpace\Learn\C#\Find\Find and Create\obj\Debug\netcoreapp3.1\Find and Create.csproj.CopyComplete
+F:\WorkSpace\Learn\C#\Find\Find and Create\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Excel.dll
+F:\WorkSpace\Learn\C#\Find\Find and Create\bin\Debug\netcoreapp3.1\Find and Create.deps.json
+F:\WorkSpace\Learn\C#\Find\Find and Create\bin\Debug\netcoreapp3.1\Find and Create.runtimeconfig.json
+F:\WorkSpace\Learn\C#\Find\Find and Create\bin\Debug\netcoreapp3.1\Find and Create.runtimeconfig.dev.json
+F:\WorkSpace\Learn\C#\Find\Find and Create\bin\Debug\netcoreapp3.1\Find and Create.dll
+F:\WorkSpace\Learn\C#\Find\Find and Create\bin\Debug\netcoreapp3.1\Find and Create.pdb
+F:\WorkSpace\Learn\C#\Find\Find and Create\obj\Debug\netcoreapp3.1\Find and Create.dll
+F:\WorkSpace\Learn\C#\Find\Find and Create\obj\Debug\netcoreapp3.1\Find and Create.pdb
+F:\WorkSpace\Learn\C#\Find\Find and Create\obj\Debug\netcoreapp3.1\Find and Create.genruntimeconfig.cache
+F:\WorkSpace\Learn\C#\Find\Find and Create\obj\Debug\netcoreapp3.1\Find and Create.csproj.CoreCompileInputs.cache

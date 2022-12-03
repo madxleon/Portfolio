@@ -1,0 +1,8 @@
+D:\WorkSpace\Learn\AutoCAD Project\AutoCAD Plugin\AutoCAD Plugin\AutoCAD Plugin\obj\Debug\AutoCAD Plugin.csproj.AssemblyReference.cache
+D:\WorkSpace\Learn\AutoCAD Project\AutoCAD Plugin\AutoCAD Plugin\AutoCAD Plugin\obj\Debug\Interop.AXDBLib.dll
+D:\WorkSpace\Learn\AutoCAD Project\AutoCAD Plugin\AutoCAD Plugin\AutoCAD Plugin\obj\Debug\AutoCAD Plugin.csproj.ResolveComReference.cache
+D:\WorkSpace\Learn\AutoCAD Project\AutoCAD Plugin\AutoCAD Plugin\AutoCAD Plugin\obj\Debug\AutoCAD Plugin.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Learn\AutoCAD Project\AutoCAD Plugin\AutoCAD Plugin\AutoCAD Plugin\bin\Debug\AutoCAD Plugin.dll
+D:\WorkSpace\Learn\AutoCAD Project\AutoCAD Plugin\AutoCAD Plugin\AutoCAD Plugin\bin\Debug\AutoCAD Plugin.pdb
+D:\WorkSpace\Learn\AutoCAD Project\AutoCAD Plugin\AutoCAD Plugin\AutoCAD Plugin\obj\Debug\AutoCAD Plugin.dll
+D:\WorkSpace\Learn\AutoCAD Project\AutoCAD Plugin\AutoCAD Plugin\AutoCAD Plugin\obj\Debug\AutoCAD Plugin.pdb

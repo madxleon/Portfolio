@@ -1,0 +1,51 @@
+---
+
+- name: Make dates
+  hosts: Reolica 
+  tasks:
+    - name: make dir data
+      shell: mkdir -p /data/
+      ignore_errors: True
+  
+- name: make dir node1
+  hosts: Mndb-1
+  tasks:
+    - name: node1  
+      shell: mkdir -p /data/node1
+      ignore_errors: True
+
+- name: make dir node2
+  hosts: Mndb-2
+  tasks:
+    - name: node2
+      shell: mkdir -p /data/node2
+      ignore_errors: True
+
+- name: make dir arbiter
+  hosts: Mndb-3
+  tasks:
+    - name: arbiter
+      shell: mkdir -p /data/arbiter
+      ignore_errors: True
+
+- name: Run repSet1
+  hosts: Mndb-1
+  tasks:
+    - name: replica1
+      shell: mongod --replSet myapp --dbpath /data/node1 --port 40000
+      ignore_errors: True
+
+- name: Run repSet2
+  hosts: Mndb-2
+  tasks:
+    - name: replica2
+      shell: mongod --replSet myapp --dbpath /data/node2 --port 40000
+      ignore_errors: True
+
+- name: Run repSet arbiter
+  hosts: Mndb-3
+  tasks:
+    - name: arbiter
+      shell: mongod --replSet myapp --dbpath /data/arbiter --port 40000
+      ignore_errors: True
+

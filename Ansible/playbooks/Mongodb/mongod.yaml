@@ -1,0 +1,58 @@
+---
+
+- name: Install component vim
+  hosts: Replica
+  tasks:
+    - name: Install component vim
+      yum:
+        name: vim
+      ignore_errors: True
+
+    - name: Install component wget
+      yum:
+        name: wget
+      ignore_errors: True
+
+    - name: Install component mc
+      yum:
+        name: mc
+      ignore_errors: True
+
+    - name: Install component locate
+      yum:
+        name: locate
+      ignore_errors: True
+
+    - name: Install repository
+      template: src=template/mongodb-org-3.6.repo dest=/etc/yum.repos.d/mongodb-org-3.6.repo
+      ignore_errors: True
+
+    - name: Install component mongod
+      yum:
+        name: mongodb-org
+      ignore_errors: True
+
+    - name: make dir log
+      shell: mkdir -p /var/log/mongodb 
+      ignore_errors: True
+
+    - name: make dir lib
+      shell: mkdir -p /var/lib/mongo 
+      ignore_errors: True
+
+    - name: chown
+      shell: chown -R mongod:mongod <directory>
+      ignore_errors: True
+
+    - name: Selinux Disabled
+      shell: grep 'SELINUX=enforcing' -P -R -I -l /etc/selinux/config | xargs sed -i 's/SELINUX=enforcing/SELINUX=disabled/g'
+      ignore_errors: True
+
+    - name: Rebooting
+    reboot:
+    msg: "Reboot initiated by Ansible"
+    connect_timeout: 5
+    reboot_timeout: 600
+    pre_reboot_delay: 0
+    post_reboot_delay: 40
+    test_command: whoamie
